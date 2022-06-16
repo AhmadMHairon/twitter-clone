@@ -18,7 +18,12 @@ cursor-pointer
 `;
 
 const Title = tw.p`
+hidden
 group-hover:text-twitter
+text-base
+font-light
+md:inline-flex
+lg:text-xl
 `;
 
 const SideBarRow = ({ Icon, title }: Props) => {

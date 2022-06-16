@@ -11,15 +11,28 @@ import {
   HomeIcon,
 } from "@heroicons/react/outline";
 import SideBarRow from "./SideBarRow.component";
+import tw from "twin.macro";
+
+const Contianer = tw.div`
+  col-span-2
+  flex
+  flex-col
+  items-center
+  px-4
+  md:items-start
+`;
 
 const SideBar = () => {
   return (
-    <div>
-      <Image
-        src={"https://links.papareact.com/drq"}
-        width={100}
-        height={100}
-      ></Image>
+    <Contianer>
+      <div className="m-3">
+        <Image
+          src={"https://links.papareact.com/drq"}
+          width={40}
+          height={40}
+        ></Image>
+      </div>
+
       <SideBarRow Icon={HomeIcon} title="Home" />
       <SideBarRow Icon={HashtagIcon} title="Explore" />
       <SideBarRow Icon={BellIcon} title="Notifications" />
@@ -29,7 +42,7 @@ const SideBar = () => {
       {true && <SideBarRow Icon={UserIcon} title="Sign In" />}
       {false && <SideBarRow Icon={UserIcon} title="Sign Out" />}
       <SideBarRow Icon={DotsCircleHorizontalIcon} title="More" />
-    </div>
+    </Contianer>
   );
 };
 
